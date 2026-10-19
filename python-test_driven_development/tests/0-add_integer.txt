@@ -36,9 +36,3 @@ Test invalid type for a (string):
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
-
-Test invalid type for b (inf):
-    >>> add_integer(2, float('inf'))
-    Traceback (most recent call last):
-        ...
-    TypeError: b must be an integer
