@@ -31,8 +31,14 @@ Test invalid type for a (None):
         ...
     TypeError: a must be an integer
 
-Test invalid type for a (string):
-    >>> add_integer("Hello", 3)
+Test float infinity:
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test float NaN:
+    >>> add_integer(float('nan'), 2)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
