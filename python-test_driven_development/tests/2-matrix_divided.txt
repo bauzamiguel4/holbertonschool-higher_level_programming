@@ -25,6 +25,7 @@ Test division by float(inf) -> all values == 0.0:
 
 Test matrix with float(inf/nan) elements:
     >>> matrix_divided([[float('inf'), 2], [3, float('nan')]], 2)
+    [[inf, 1.0], [1.5, nan]]
 
 Test matrix not a list of lists:
     >>> matrix_divided([1, 2, 3], 2)
