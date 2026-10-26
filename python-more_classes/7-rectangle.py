@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module defines a class Rectangle with width, height, area, perimeter,
-string representations, deletion detection, instance tracking, and custom symbols.
+string representations, deletion detection, and custom symbols.
 """
 
 
@@ -117,7 +117,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         symbol = str(self.print_symbol)
         rect = []
         for _ in range(self.__height):
