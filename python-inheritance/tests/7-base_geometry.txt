@@ -18,6 +18,41 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
+>>> bg.integer_validator("float_val", 1.2)
+Traceback (most recent call last):
+...
+TypeError: float_val must be an integer
+
+>>> bg.integer_validator("bool_val", True)
+Traceback (most recent call last):
+...
+TypeError: bool_val must be an integer
+
+>>> bg.integer_validator("bool_val_f", False)
+Traceback (most recent call last):
+...
+TypeError: bool_val_f must be an integer
+
+>>> bg.integer_validator("list_val", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: list_val must be an integer
+
+>>> bg.integer_validator("tuple_val", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: tuple_val must be an integer
+
+>>> bg.integer_validator("dict_val", {"a": 1})
+Traceback (most recent call last):
+...
+TypeError: dict_val must be an integer
+
+>>> bg.integer_validator("none_val", None)
+Traceback (most recent call last):
+...
+TypeError: none_val must be an integer
+
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
 ...
