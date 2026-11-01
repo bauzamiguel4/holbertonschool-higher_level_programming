@@ -32,36 +32,26 @@ class Circle(Shape):
     A class representing a circle, inheriting from Shape.
     """
 
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """
         Initializes a Circle instance.
 
         Args:
             radius (float/int): The radius of the circle.
         """
-        self.__radius = radius
-
-    @property
-    def radius(self):
-        """Getter for radius."""
-        return self.__radius
-
-    @radius.setter
-    def radius(self, value):
-        """Setter for radius with basic validation if needed."""
-        self.__radius = value
+        self.radius = radius
 
     def area(self):
         """
         Calculates and returns the area of the circle.
         """
-        return math.pi * (self.__radius ** 2)
+        return math.pi * (self.radius ** 2)
 
     def perimeter(self):
         """
         Calculates and returns the perimeter (circumference) of the circle.
         """
-        return 2 * math.pi * self.__radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
@@ -69,7 +59,7 @@ class Rectangle(Shape):
     A class representing a rectangle, inheriting from Shape.
     """
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, width, height):
         """
         Initializes a Rectangle instance.
 
@@ -77,20 +67,20 @@ class Rectangle(Shape):
             width (float/int): The width of the rectangle.
             height (float/int): The height of the rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
         """
         Calculates and returns the area of the rectangle.
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """
         Calculates and returns the perimeter of the rectangle.
         """
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
