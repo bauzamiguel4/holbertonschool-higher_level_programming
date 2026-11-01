@@ -1,0 +1,56 @@
+=============================
+How to use 1-my_list
+=============================
+
+>>> MyList = __import__('1-my_list').MyList
+
+Check instantiation:
+>>> my_list = MyList()
+>>> type(my_list)
+<class '1-my_list.MyList'>
+
+Check inherits from list:
+>>> issubclass(MyList, list)
+True
+
+Check __str__:
+>>> print(my_list)
+[]
+
+Check append():
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Check print_sorted() with not sorted append:
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Check print_sorted() returns a new list / original list unmodified:
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Check print_sorted() with sorted append:
+>>> sorted_list = MyList()
+>>> sorted_list.append(1)
+>>> sorted_list.append(2)
+>>> sorted_list.append(3)
+>>> sorted_list.print_sorted()
+[1, 2, 3]
+
+Check print_sorted() with no sorted append with negative number:
+>>> neg_list = MyList()
+>>> neg_list.append(-5)
+>>> neg_list.append(-1)
+>>> neg_list.append(-3)
+>>> neg_list.print_sorted()
+[-5, -3, -1]
+
+Check print_sorted() with empty list:
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
