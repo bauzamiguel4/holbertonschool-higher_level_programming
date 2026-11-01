@@ -39,19 +39,29 @@ class Circle(Shape):
         Args:
             radius (float/int): The radius of the circle.
         """
-        self.radius = radius
+        self.__radius = radius
+
+    @property
+    def radius(self):
+        """Getter for radius."""
+        return self.__radius
+
+    @radius.setter
+    def radius(self, value):
+        """Setter for radius with basic validation if needed."""
+        self.__radius = value
 
     def area(self):
         """
         Calculates and returns the area of the circle.
         """
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.__radius ** 2)
 
     def perimeter(self):
         """
         Calculates and returns the perimeter (circumference) of the circle.
         """
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * self.__radius
 
 
 class Rectangle(Shape):
@@ -67,20 +77,20 @@ class Rectangle(Shape):
             width (float/int): The width of the rectangle.
             height (float/int): The height of the rectangle.
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
         """
         Calculates and returns the area of the rectangle.
         """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
         Calculates and returns the perimeter of the rectangle.
         """
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
 
 def shape_info(shape):
