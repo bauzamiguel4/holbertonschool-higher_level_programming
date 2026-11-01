@@ -10,9 +10,34 @@ Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
+# Valid integers
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("age", 10)
+>>> bg.integer_validator("age", 1)
 
+# Invalid types (Sneaky edge cases)
+>>> bg.integer_validator("float_eq", 1.0)
+Traceback (most recent call last):
+...
+TypeError: float_eq must be an integer
+
+>>> bg.integer_validator("str_num", "1")
+Traceback (most recent call last):
+...
+TypeError: str_num must be an integer
+
+>>> bg.integer_validator("nan_val", float('nan'))
+Traceback (most recent call last):
+...
+TypeError: nan_val must be an integer
+
+>>> bg.integer_validator("set_val", {1, 2})
+Traceback (most recent call last):
+...
+TypeError: set_val must be an integer
+
+# Invalid types (Standard)
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
 ...
@@ -53,7 +78,13 @@ Traceback (most recent call last):
 ...
 TypeError: none_val must be an integer
 
+# Invalid values
 >>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("age", -1)
 Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
